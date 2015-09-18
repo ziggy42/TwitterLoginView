@@ -4,6 +4,6 @@
     <string name="login_button_text">Login</string>
     <string name="welcome">Welcome</string>
     <string name="authorized_by">Authorized by %1$s</string>
-    <string name="failed_due">Failed due to %1$s</string>
+    <string name="failed_code">Failed! Error code %1$s</string>
 
 </resources>

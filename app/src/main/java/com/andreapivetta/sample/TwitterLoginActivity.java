@@ -45,7 +45,7 @@ public class TwitterLoginActivity extends Activity implements TwitterLoginListen
         view.start(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET, CALLBACK_URL, this);
     }
 
-    public void onSuccess(TwitterLoginView view, AccessToken accessToken) {
+    public void onSuccess(AccessToken accessToken) {
         PreferenceManager.getDefaultSharedPreferences(TwitterLoginActivity.this).edit().
                 putString(PREF_KEY_OAUTH_TOKEN, accessToken.getToken()).
                 putString(PREF_KEY_OAUTH_SECRET, accessToken.getTokenSecret()).
@@ -58,8 +58,8 @@ public class TwitterLoginActivity extends Activity implements TwitterLoginListen
         finish();
     }
 
-    public void onFailure(TwitterLoginView view, int result) {
-        showMessage((getString(R.string.failed_due, result)));
+    public void onFailure(int resultCode) {
+        showMessage((getString(R.string.failed_code, resultCode)));
     }
 
     private void showMessage(String message) {

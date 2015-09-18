@@ -4,8 +4,8 @@ import twitter4j.auth.AccessToken;
 
 public interface TwitterLoginListener {
 
-    void onSuccess(TwitterLoginView view, AccessToken accessToken);
+    void onSuccess(AccessToken accessToken);
 
-    void onFailure(TwitterLoginView view, int result);
+    void onFailure(int resultCode);
 
 }

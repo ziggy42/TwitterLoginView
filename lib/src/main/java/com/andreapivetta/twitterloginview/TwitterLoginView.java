@@ -23,11 +23,11 @@ import twitter4j.auth.RequestToken;
 
 public class TwitterLoginView extends WebView {
 
-    private final static int SUCCESS = 0;
-    private final static int CANCELLATION = 1;
-    private final static int REQUEST_TOKEN_ERROR = 2;
-    private final static int AUTHORIZATION_ERROR = 3;
-    private final static int ACCESS_TOKEN_ERROR = 4;
+    public final static int SUCCESS = 0;
+    public final static int CANCELLATION = 1;
+    public final static int REQUEST_TOKEN_ERROR = 2;
+    public final static int AUTHORIZATION_ERROR = 3;
+    public final static int ACCESS_TOKEN_ERROR = 4;
 
     private TwitterOAuthTask twitterOAuthTask;
 
@@ -193,11 +193,11 @@ public class TwitterLoginView extends WebView {
         }
 
         private void onAuthSuccess() {
-            listener.onSuccess(TwitterLoginView.this, accessToken);
+            listener.onSuccess(accessToken);
         }
 
         private void onAuthFailure(Integer result) {
-            listener.onFailure(TwitterLoginView.this, result);
+            listener.onFailure(result);
         }
 
         private void clearTaskReference() {
